@@ -1,6 +1,6 @@
 {
   "name": "html-css-js-editor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "private": false,
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.22.15",
@@ -53,7 +53,20 @@
   "types": "dist/index.d.ts",
   "author": "Krishankarki.work@gmail.com",
   "license": "MIT",
-  "keywords": ["react-editor","html-editor","css-editor","js-editor","web-editor","html-css-editor","html-css-js-editor","react-web-editor","react-html-css-editor","react-html-css-js-editor","debugger-editor","js-console"],
+  "keywords": [
+    "react-editor",
+    "html-editor",
+    "css-editor",
+    "js-editor",
+    "web-editor",
+    "html-css-editor",
+    "html-css-js-editor",
+    "react-web-editor",
+    "react-html-css-editor",
+    "react-html-css-js-editor",
+    "debugger-editor",
+    "js-console"
+  ],
   "dependencies": {
     "@monaco-editor/react": "^4.6.0",
     "monaco-editor": "^0.44.0"
