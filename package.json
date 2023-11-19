@@ -1,7 +1,8 @@
 {
   "name": "html-css-js-editor",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
+  "repository": "https://github.com/kamalkarki111/html-css-js-editor",
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.22.15",
     "@babel/preset-env": "^7.23.3",
