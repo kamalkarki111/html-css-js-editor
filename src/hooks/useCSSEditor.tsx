@@ -2,14 +2,12 @@
 import { useEffect, useMemo } from "react";
 
 export function useCSSEditor({ value, iframeRef  } : UseCSSEditorParams) {
-    
-    const cssElement: HTMLStyleElement = useMemo(()=>{
-        return document.createElement('style');
-    }, []);
+
 
     useEffect(()=>{
 
         const node = iframeRef.current?.contentDocument?.head;
+        const cssElement = document.createElement('style');
 
         if(node){
             node?.appendChild(cssElement);
@@ -24,13 +22,15 @@ export function useCSSEditor({ value, iframeRef  } : UseCSSEditorParams) {
                 }
             }
         }
-    },[])
+    },[iframeRef])
 
     useEffect( () => {
 
-        if( cssElement ) {
+        const node = iframeRef.current?.contentDocument?.head.querySelector('style');
+
+        if( node ) {
             try{
-                cssElement.innerHTML = value;
+                node.innerHTML = value as string;
             } catch(e){
                 console.log(e)
             }
@@ -39,7 +39,7 @@ export function useCSSEditor({ value, iframeRef  } : UseCSSEditorParams) {
         return ()=>{
         }
         
-    }, [value, iframeRef, cssElement])
+    }, [value, iframeRef])
 }
 
 export interface UseCSSEditorParams {
