@@ -1,6 +1,6 @@
 {
   "name": "html-css-js-editor",
-  "version": "0.1.9",
+  "version": "1.0.0",
   "private": false,
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.22.15",
@@ -51,7 +51,9 @@
     ]
   },
   "description": "Custmisabl Headless component and React component for js, css and html compiler.",
-  "main": "dist/bundle.js",
+  "main": "dist/bundle.cjs.js",
+  "module": "dist/bundle.esm.js",
+  "types": "dist/index.d.ts",
   "author": "Krishankarki.work@gmail.com",
   "license": "MIT"
 }
