@@ -1,3 +1,4 @@
+'use client'
 import { useEffect } from "react";
 
 export function useJSEditor({ value, iframeRef  } : UseJSEditorParams) {

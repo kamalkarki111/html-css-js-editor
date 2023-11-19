@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 export function useJSEditor({ value, iframeRef }) {
     useEffect(() => {
-        const node = iframeRef.current?.contentDocument?.body;
+        const node = iframeRef.current?.contentDocument?.head;
         if (node) {
             var scriptElement = document.createElement('script');
             node?.appendChild(scriptElement);

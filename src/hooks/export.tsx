@@ -1,3 +1,4 @@
+'use client'
 export * from './useCSSEditor'
 export * from './useConsole'
 export * from './useEditor'

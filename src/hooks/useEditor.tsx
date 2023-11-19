@@ -1,3 +1,4 @@
+'use client'
 import { HTMLAttributes, useEffect, useId, useRef } from "react";
 import {useHTMLEditor} from "./useHTMLEditor";
 import {useCSSEditor} from "./useCSSEditor";

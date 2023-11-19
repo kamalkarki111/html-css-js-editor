@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, useMemo } from "react"
 
 export function useHTMLEditor({ value, iframeRef  } : UseHTMLEditorParams) {

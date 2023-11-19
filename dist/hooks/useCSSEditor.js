@@ -4,9 +4,23 @@ export function useCSSEditor({ value, iframeRef }) {
         return document.createElement('style');
     }, []);
     useEffect(() => {
-        const node = iframeRef.current?.contentDocument?.body;
-        if (value && node) {
+        const node = iframeRef.current?.contentDocument?.head;
+        if (node) {
             node?.appendChild(cssElement);
+        }
+        return () => {
+            if (node) {
+                try {
+                    node?.removeChild(cssElement);
+                }
+                catch (e) {
+                    console.log(e);
+                }
+            }
+        };
+    }, []);
+    useEffect(() => {
+        if (cssElement) {
             try {
                 cssElement.innerHTML = value;
             }
@@ -15,9 +29,6 @@ export function useCSSEditor({ value, iframeRef }) {
             }
         }
         return () => {
-            if (value && node) {
-                node?.removeChild(cssElement);
-            }
         };
     }, [value, iframeRef, cssElement]);
 }

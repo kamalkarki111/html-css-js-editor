@@ -1,3 +1,4 @@
+'use client'
 export * from './console.component';
 export * from './css-editor.component';
 export * from './html-editor.component';

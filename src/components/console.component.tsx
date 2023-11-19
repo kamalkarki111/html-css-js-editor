@@ -1,3 +1,4 @@
+'use client'
 import React from 'react';
 import {useConsole} from "../hooks/useConsole";
 import { HTMLAttributes } from "react";

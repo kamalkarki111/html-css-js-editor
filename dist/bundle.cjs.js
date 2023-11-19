@@ -637,20 +637,29 @@ function useCSSEditor(_ref) {
   }, []);
   React.useEffect(() => {
     var _iframeRef$current;
-    const node = (_iframeRef$current = iframeRef.current) === null || _iframeRef$current === void 0 || (_iframeRef$current = _iframeRef$current.contentDocument) === null || _iframeRef$current === void 0 ? void 0 : _iframeRef$current.body;
-    if (value && node) {
+    const node = (_iframeRef$current = iframeRef.current) === null || _iframeRef$current === void 0 || (_iframeRef$current = _iframeRef$current.contentDocument) === null || _iframeRef$current === void 0 ? void 0 : _iframeRef$current.head;
+    if (node) {
       node === null || node === void 0 || node.appendChild(cssElement);
+    }
+    return () => {
+      if (node) {
+        try {
+          node === null || node === void 0 || node.removeChild(cssElement);
+        } catch (e) {
+          console.log(e);
+        }
+      }
+    };
+  }, []);
+  React.useEffect(() => {
+    if (cssElement) {
       try {
         cssElement.innerHTML = value;
       } catch (e) {
         console.log(e);
       }
     }
-    return () => {
-      if (value && node) {
-        node === null || node === void 0 || node.removeChild(cssElement);
-      }
-    };
+    return () => {};
   }, [value, iframeRef, cssElement]);
 }
 
@@ -719,7 +728,7 @@ function useJSEditor(_ref) {
   } = _ref;
   React.useEffect(() => {
     var _iframeRef$current;
-    const node = (_iframeRef$current = iframeRef.current) === null || _iframeRef$current === void 0 || (_iframeRef$current = _iframeRef$current.contentDocument) === null || _iframeRef$current === void 0 ? void 0 : _iframeRef$current.body;
+    const node = (_iframeRef$current = iframeRef.current) === null || _iframeRef$current === void 0 || (_iframeRef$current = _iframeRef$current.contentDocument) === null || _iframeRef$current === void 0 ? void 0 : _iframeRef$current.head;
     if (node) {
       var scriptElement = document.createElement('script');
       node === null || node === void 0 || node.appendChild(scriptElement);
