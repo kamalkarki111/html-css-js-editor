@@ -1,6 +1,6 @@
 {
   "name": "html-css-js-editor",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": false,
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.22.15",
