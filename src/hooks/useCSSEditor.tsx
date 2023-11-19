@@ -6,11 +6,28 @@ export function useCSSEditor({ value, iframeRef  } : UseCSSEditorParams) {
         return document.createElement('style');
     }, []);
 
+    useEffect(()=>{
+
+        const node = iframeRef.current?.contentDocument?.head;
+
+        if(node){
+            node?.appendChild(cssElement);
+        } 
+
+        return ()=>{
+            if( node ) {
+                try{
+                    node?.removeChild(cssElement);
+                } catch(e) {
+                    console.log(e)
+                }
+            }
+        }
+    },[])
+
     useEffect( () => {
 
-        const node = iframeRef.current?.contentDocument?.body;
-        if( value && node ) {
-            node?.appendChild(cssElement);
+        if( cssElement ) {
             try{
                 cssElement.innerHTML = value;
             } catch(e){
@@ -19,9 +36,6 @@ export function useCSSEditor({ value, iframeRef  } : UseCSSEditorParams) {
         }
 
         return ()=>{
-            if( value && node ) {
-                node?.removeChild(cssElement);
-            }
         }
         
     }, [value, iframeRef, cssElement])

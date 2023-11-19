@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 
 export function useJSEditor({ value, iframeRef  } : UseJSEditorParams) {
 
@@ -6,7 +6,7 @@ export function useJSEditor({ value, iframeRef  } : UseJSEditorParams) {
 
     useEffect( () => {
 
-        const node = iframeRef.current?.contentDocument?.body;
+        const node = iframeRef.current?.contentDocument?.head;
         
         if( node ) {
             var scriptElement = document.createElement('script');
