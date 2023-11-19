@@ -1,6 +1,6 @@
 {
   "name": "html-css-js-editor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.22.15",
@@ -27,7 +27,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "publish-npm": "rollup -c rollup.config.mjs && yarn publish"
